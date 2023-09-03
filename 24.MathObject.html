@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Object</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Lugrasimo&family=Poppins:wght@200;300&family=Roboto:ital,wght@0,300;1,100&display=swap');
+        *{
+            margin:0px;
+            padding: 0px;
+            font-family: 'Poppins', sans-serif;
+            line-height: 22px;
+            letter-spacing: 1px;
+            color: rgb(0, 255, 157);
+            text-transform: capitalize;
+        }
+        h2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 10px 0px;
+            border: 1px solid red;
+            background-color: rgb(255, 42, 0);
+        }
+        body{
+            background-color: rgb(17, 15, 15);
+            display: grid;
+            grid-template-columns: repeat(1,auto);
+            gap: 3px;
+            margin: 5px;
+            
+        }
+        p{
+            border: 1px solid rgb(95, 95, 95);
+            border-radius: 5px;
+            padding: 8px;
+        }
+        input{
+            background: transparent;
+            outline: none;
+            border: 1px solid grey;
+            color: azure;
+            padding: 3px 5px;
+            border-radius: 5px;
+        }
+        #demo61{
+            text-align: center;
+        }
+        #demo6a{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #radconvertbtn{
+            margin-top: 18px;
+            color: rgb(255, 0, 0);
+            padding: 2px 6px;
+            outline: none;
+            font-weight: bold;
+            border: 1px rgb(0, 0, 0) solid;
+            border-radius: 4px;
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <h2>Math object</h2>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo61"><span>Convert Degree to radian</span></p>
+    <p id="demo6a"><span>Enter a Degree: <input type="text" id="inputdata"></span><button id="radconvertbtn" onclick="myfunc()">Convert</button><span id="demo7"></span></p>
+    
+    <script>
+        let m = Math.E;
+        let n = Math.PI;
+        let n1 = Math.LN10;
+        let n2 = Math.SQRT2;
+        let n3 = Math.SQRT1_2;
+        let n4 = Math.LOG2E;
+        let n5 = Math.LOG10E;
+        let n6 = Math.LN2;
+        document.getElementById("demo1").innerHTML = "Euler's number: " +m + "<br>" +"PI: "+ n + "<br>" +"The natural logarithm of 10: "+ n1 + "<br>" +"the square root of 2: "+n2 +"<br>" +"the square root of 1/2: "+n3 + "<br>"+"base 2 logarithm of E: " + n4 + "<br>"+ "base 10 logarithm of E: "+ n5 + "<br>"+"the natural logarithm of 2: "+n6;
+        // Math.round(x) returns the nearest integer:
+        let x1 = Math.round(4.566);
+        let x12 = Math.round(4.3);
+        let x13 = Math.round(4.8);
+        let x14 = Math.round(4.2);
+        document.getElementById("demo2").innerHTML = "round of (returns the nearest integer)"+"<br>"+"4.566 = "+x1+"<br>"+"4.3 = "+x12+"<br>"+"4.8 = "+x13 ;
+        // Math.ceil(x) returns the value of x rounded up to its nearest integer:
+        let x2 = Math.ceil(4.9);
+        let x21 = Math.ceil(4.7);
+        let x22 = Math.ceil(4.4);
+        let x23 = Math.ceil(4.2);
+        document.getElementById("demo3").innerHTML = "Math.Ceil (rounded up to its nearest integer)"+"<br>"+"4.9 = "+ x2 + "<br>"+"4.7 = "+ x21 +"<br>"+"4.4 = "+ x22;
+        
+        // Math.floor(x) returns the value of x rounded down to its nearest integer:
+        let x30 = Math.floor(4.9);
+        let x31 = Math.floor(4.7);
+        let x32 = Math.floor(4.4);
+        let x33 = Math.floor(4.2);
+        let x34 = Math.floor(-4.2);
+        document.getElementById("demo4").innerHTML = "Math.floor (rounded down to its nearest integer)"+"<br>"+"4.9 = " + x30 +"<br>"+"4.7 = "+ x31+"<br>"+"-4.2 = "+ x34 ;
+        // Math.trunc(x) returns the integer part of x:
+        let x40 =  Math.trunc(4.9);
+        let x41 = Math.trunc(4.7);
+        document.getElementById("demo5").innerHTML = "Math.trunc(x) (returns the integer part)" + "<br>" + "4.9 = "+x40+"<br>"+"4.7 = "+ x41;
+        // Math.sign(x) returns if x is negative, null or positive:
+        let m1 = Math.sign(-4);
+        let m2 = Math.sign(0);
+        let m3 = Math.sign(4);
+        document.getElementById("demo6").innerHTML = "Math.sign(x) (returns if x is negative, null or positive)"+"<br>"+"-4 = "+ m1 + "<br>" + "0 = " + m2 + "<br>" + "4 = "+ m3 ;
+        // Math.pow(x, y) returns the value of x to the power of y:
+        let n10 = Math.pow(8,2);
+        console.log(n10);
+        // Math.sqrt(x) returns the square root of x:
+        let n11 = Math.sqrt(64);
+        console.log(n11);
+        // Math.abs(x) returns the absolute (positive) value of x:
+        let n12 = Math.abs(-4.5);
+        console.log(n12);
+        // Math.sin(x) returns the sine (a value between -1 and 1) of the angle x (given in radians).
+        let d = document.getElementById("demo6a");
+        // let convertrad = v*(Math.PI/180);
+        
+        let inputd = document.getElementById("inputdata");
+        let btn = document.getElementById("radconvertbtn");
+        let res = document.getElementById("demo7");
+        function myfunc(){
+            const inputvalue = parseFloat(inputd.value);
+            let convertrad = inputvalue*(Math.PI/180)
+            if(!isNaN(inputvalue)){
+                const result = convertrad;
+                res.textContent = `Radian = ${result}`
+            }else{
+                res.textContent = "please enter a valid number."
+            }
+
+        }
+    </script>
+</body>
+</html>
